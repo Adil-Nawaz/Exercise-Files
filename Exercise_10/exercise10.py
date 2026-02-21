@@ -1,6 +1,5 @@
 #Functions with outputs
 #Changing case of Name using function
-''' 
 def format_name(first, last):
     f_name = first.title()
     l_name = last.title()
@@ -59,7 +58,7 @@ year = int(input("Enter a year: "))
 month = int(input("Enter a month: "))
 days  = days_in_month(year,month)
 print(f"The days in {month} month in year {year} are {days}")
-'''
+
 
 from  asciiart import logo, image
 print(logo + image)
