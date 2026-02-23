@@ -1,13 +1,8 @@
-import random
-print("Welcome to the number guessing game!")
-def diffcultyLevel(level):
-    if level == "easy":
-        return 5
-    elif level == "hard":
-        return 10
-    else:
-        print("Wrong choice!")
-number = random.randint(1,100)
-print("I'm thinking of a number between 1 and 100.")
+def mutate(a_list):
+    b_list = []
+    for item in a_list:
+        new_item = item * 2
+        b_list.append(new_item)
+    print(b_list)
 
-attempts = diffcultyLevel(input("Choose a difficulty. Type 'easy' or 'hard': ").lower())
+mutate([1,2,3,5,8,13])
