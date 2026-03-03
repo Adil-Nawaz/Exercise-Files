@@ -6,18 +6,13 @@ namesList = [
     "Saad", "Noor", "Hassan", "Amelia"
 ]
 printList = []
-
-for _ in range(0, len(namesList)):
-    printList.append("_")
-print(printList)
-
-
-for names in range(0,len(printList)):
-    randomName = random.choice(namesList)
-    if randomName not in printList:
-        printList[names] = randomName
-        print(printList)
-    else:
+while True:
+    next_name = input ("Type n for next name ").lower()
+    if next_name == "n":
         randomName = random.choice(namesList)
-        
+        if not randomName in printList and len(printList) < len(namesList):
+            printList.append(randomName)
+        elif len(printList) == len(namesList):
+            break
+    print(printList)
 
