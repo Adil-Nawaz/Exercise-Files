@@ -8,20 +8,37 @@ digit2 = int(number[1])
 print(f"Sum of 2 digit number {number} is: {digit1+ digit2}") 
 
 '''
-import random
-names = [
-    "Ayaan", "Zara", "Hamza", "Elena",
-    "Rayan", "Sophia", "Daniyal", "Maya",
-    "Ibrahim", "Lina", "Arham", "Ava",
-    "Saad", "Noor", "Hassan", "Amelia"
-]
-printList = []
-randomName = random.choice(names)
-for _ in range(0, len(names)):
-    printList.append("_")
-print(printList)
-for names in printList:
-    if randomName != printList[names]:
-        printList[names] = randomName
-        print(printList)
 
+print("******** WELCOME TO THE PyPASSWORD GENERATOR PROGRAM ********")
+import random
+lettersList = [
+'a','b','c','d','e','f','g','h','i','j','k','l','m',
+'n','o','p','q','r','s','t','u','v','w','x','y','z',
+'A','B','C','D','E','F','G','H','I','J','K','L','M',
+'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+]
+numbersList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbolsList = [
+'!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+'-', '_', '=', '+', '[', ']', '{', '}', ';', ':',
+"'", '"', ',', '.', '<', '>', '/', '?', '\\', '|',
+'`', '~'
+]
+letters = int(input("How many letters would you like in your password? "))
+symbols = int(input("How many symbols would you like in your password? "))
+numbers = int(input("How many numbers would you like in your password? "))
+
+generatedPass = []
+random.shuffle(lettersList)
+random.shuffle(numbersList)
+random.shuffle(symbolsList)
+for letter in range(0,letters):
+    generatedPass.append(lettersList[letter])
+for symbol in range(0,symbols):
+    generatedPass.append(symbolsList[symbol])
+for number in range(0, numbers):
+    generatedPass.append(numbersList[number])
+random.shuffle(generatedPass)
+finalPass = ""
+
+print(finalPass.join(generatedPass))
